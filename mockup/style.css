@@ -140,7 +140,12 @@ header {
     grid-column-end: 13;
     grid-row-start: 1;
     grid-row-end: 2;
-    padding: 1em 0 0 0;
+    padding: 8em 1em 0em 1em;
+    background-image: url(images/johnnyday.jpg);
+    background-repeat: no-repeat;
+    background-position: center right;
+    background-size: cover;
+    text-align: left;
 }
 nav {
     grid-column-start: 1;
@@ -160,13 +165,15 @@ article {
 article li {
     padding: .15em;
 }
-.experience {
-    background: black;
-    color: white;
+.breakout {
     padding: 2em 4em;
 }
-.breakout {
-    padding: .5em 4em 2em 4em;
+.experience {
+    backdrop-filter: blur(6px);
+    padding: 2em 4em;
+    background-color: rgba(255,255,255,0.5);
+    border-top: 1px solid rgb(0,0,0,.1);
+    border-bottom: 1px solid rgb(0,0,0,.1);
 }
 .fnav {
     display: flex;
@@ -175,19 +182,23 @@ article li {
     text-align: left;
     font-size: var(--text-sm);
     font-family: var(--font-secondary);
-    border-bottom: 1px solid #efefef;
+    padding: .5em 4em 0 4em;
 }
 dl {
     flex-grow: 1;
     flex-basis: 0;
+    padding: 0 1em;
 }
 h1 {
     font-size: var(--text-xxxl);
-    border-bottom: 1px solid #efefef;
 }
 header h6 {
+    padding: .1em 0;
+}
+.emailme {
     padding: 1em 4em;
-    border-bottom: 1px solid #efefef;
+    background: #005;
+    color: white;
 }
 h1 a {
     color: black;
@@ -196,17 +207,29 @@ h1 a {
 h1 a:hover {
     color: #900;
 }
-h6 a {
-    display: block;
+h3 a {
     font-weight: 100;
     text-decoration: none;
+    padding: .1em .25em;
+    border-radius: .1em;
+    color: white;
+    border-bottom: 1px dotted rgba(255, 255, 255, 0.5);
+}
+h3 a:hover {
+    background-color: white;
+    color: #005;
+    border-bottom: none;
 }
 dt {
     border-bottom: 1px solid #efefef;
     font-weight: bold;
+    padding: 1.5em 0 0 0;
+    margin-bottom: .5em;
 }
 dd {
-
+    display:list-item;
+    margin-left: 1em;
+    padding-bottom: .1em;
 }
 dt a {
     text-decoration: none;
@@ -247,21 +270,65 @@ dt a:hover, dd a:hover, .current {
     color: #333
 }
 
+/*** for the smaller screenz ***/
+@media only screen and (max-width: 800px) {
+    header {
+        grid-column-start: 1;
+        grid-column-end: 13;
+        grid-row-start: 1;
+        grid-row-end: 2;
+        padding: 8em 1em 0em 1em;
+        background-image: url(images/johnnyday.jpg);
+        background-repeat: no-repeat;
+        background-position: bottom center;
+        background-size: cover;
+        text-align: left;
+    }
+    .emailme {
+        padding: 1em 2em;
+        background: #005;
+        color: white;
+    }
+    h3 {
+
+    }
+    h3 a {
+
+    }
+    .fnav {
+        display: block;
+        padding: .5em 2em 0 2em;
+    }
+    .breakout {
+        margin-top: 14em;
+        padding: 2em 15em 1em 2em;
+    }
+    .experience {
+        backdrop-filter: blur(6px);
+        padding: 2em 2em;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    
+}
+
+
 /*** Framed Border Hack ***/
 #top, #bottom, #left, #right {
-background: #000;
-position: fixed;
+    background: #005;
+    position: fixed;
 }
 #left, #right {
     top: 0; bottom: 0;
-    width: 15px;
+    width: 16px;
     }
     #left {left: 0;}
     #right {right: 0;}
     
 #top, #bottom {
     left: 0; right: 0;
-    height: 15px;
+    height: 16px;
     }
     #top {top: 0;}
     #bottom {bottom: 0;}
